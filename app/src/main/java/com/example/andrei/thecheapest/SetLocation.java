@@ -199,6 +199,13 @@ public class SetLocation extends FragmentActivity implements OnMapReadyCallback,
     public void saveData(View view){
         Toast.makeText(getApplicationContext(), "This will be done later :)", Toast.LENGTH_LONG).show();
         System.out.println(lat+"     "+lng);
+
+        Intent intent = new Intent();
+        intent.putExtra("Lat", lat);
+        intent.putExtra("Long", lng);
+        setResult(RESULT_OK, intent);
+        finish();
+
     }
     @Override
     protected void onResume() {

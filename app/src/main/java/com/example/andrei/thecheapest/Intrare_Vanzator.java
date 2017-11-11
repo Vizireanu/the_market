@@ -220,11 +220,15 @@ public class Intrare_Vanzator extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
+            }
+        }
 
+        if(requestCode == 2){
+            if(resultCode == RESULT_OK){
+                String lat = data.getStringExtra("Lat");
+                String lng = data.getStringExtra("Long");
 
-
-
-
+                System.out.println(lat + "   " + lng);
             }
         }
 
@@ -292,7 +296,7 @@ public class Intrare_Vanzator extends AppCompatActivity {
     public void setLocation (View v)
     {
         Intent i = new Intent(getBaseContext(), SetLocation.class);
-        startActivity(i);
+        startActivityForResult(i, 2);
     }
 
 }
